@@ -87,14 +87,20 @@ app.get('/exercises/:id', asyncHandler(async (req, res) => {
 
 app.put('/exercises/:id', asyncHandler(async (req, res) => {
     const exerciseInfo = req.body // object with stuff to update
-    const filter = {_id: req.params.id};
-    const responseArray = await exercises.updateExercise(filter, exerciseInfo);
-    if (responseArray.length === 0) {
-        let responseObject = {"Error": "Not found"};
-        res.status(404).json(responseObject);
+
+    if (isValidRequest(exerciseInfo)) {
+        const filter = {_id: req.params.id};
+        const responseArray = await exercises.updateExercise(filter, exerciseInfo);
+        if (responseArray.length === 0) {
+            let responseObject = {"Error": "Not found"};
+            res.status(404).json(responseObject);
+        } else {
+            let responseObject = responseArray[0];
+            res.status(200).json(responseObject);
+        }
     } else {
-        let responseObject = responseArray[0];
-        res.status(200).json(responseObject);
+        const responseObject = { Error: "Invalid request"};
+        res.status(400).json(responseObject);
     }
 }))
 
@@ -106,7 +112,6 @@ app.delete('/exercises', asyncHandler(async (req, res) => {
 }));
 
 app.delete('/exercises/:id', asyncHandler(async (req, res) => {
-    // console.log(req.params.id);
     const deletedCount = await exercises.deleteById(req.params.id);
     if (deletedCount === 1) {
         res.setHeader('Content-Type', 'application/json');
