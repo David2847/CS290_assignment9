@@ -45,7 +45,6 @@ async function findExercises(filter) {
 }
 
 async function updateExercise(filter, updateObject) {
-    // console.log(updateObject);
     const result = await Exercise.updateOne(filter, { $set: updateObject});
     // get the updated document
     const query = Exercise.find(filter);
@@ -54,7 +53,6 @@ async function updateExercise(filter, updateObject) {
 
 async function deleteByQuery(filter) {
     const result = await Exercise.deleteMany(filter);
-    console.log(result);
     return result.deletedCount;
 }
 

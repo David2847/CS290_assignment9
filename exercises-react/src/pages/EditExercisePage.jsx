@@ -4,8 +4,6 @@ import Navigation from '../components/Navigation'
 
 export const EditExercisePage = ({ exerciseToEdit }) => {
 
-    console.log(exerciseToEdit);
-
     // todo: modify the properties below
     const [name, setName] = useState(exerciseToEdit.name);
     const [reps, setReps] = useState(exerciseToEdit.reps);

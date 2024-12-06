@@ -15,23 +15,18 @@ function isValidRequest(exercise) {
     let isValid = true;
     // name: must be string with at least one character
     if (typeof exercise.name !== 'string' || exercise.name.length === 0) {
-        //console.log("bad name");
         isValid = false;
     // reps: must be integer > 0
     } else if (!Number.isInteger(exercise.reps) || exercise.reps <= 0) {
-        //console.log("bad reps");
         isValid = false;
     // weight: must be integer > 0
     } else if (!Number.isInteger(exercise.weight) || exercise.weight <= 0) {
-        //console.log("bad weight");
         isValid = false;
     // unit: must be string 'lbs' or 'kgs'
     } else if (typeof exercise.unit !== 'string' || !(exercise.unit === 'lbs' || exercise.unit === 'kgs')) {
-        //console.log("bad unit");
         isValid = false;
     // date: must be string in MM-DD-YY format, all three must be 2-digit integers
     } else if (!isDateValid(exercise.date)) {
-        //console.log("bad date");
         isValid = false;
     }
     return isValid;
@@ -68,13 +63,11 @@ app.post('/exercises', asyncHandler(async (req, res) => {
 
 app.get('/exercises', asyncHandler(async (req, res) => {
     const query = req.query;
-    console.log(req.query);
     const responseArray = await exercises.findExercises(query);
     res.status(200).json(responseArray);
 }))
 
 app.get('/exercises/:id', asyncHandler(async (req, res) => {
-    // console.log(req.params.id);
     const responseArray = await exercises.findExercises({_id: req.params.id});
     if (responseArray.length === 0) {
         let responseObject = {"Error": "Not found"};
