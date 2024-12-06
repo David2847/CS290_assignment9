@@ -30,7 +30,7 @@ function HomePage({ setExerciseToEdit }) {
     }
 
     const onEdit = async (exercise) => {
-        // console.log("onedit was called with " + exercise.name);
+        console.log("onedit was called with " + exercise.name);
         setExerciseToEdit(exercise);
         navigate('/edit-exercise');
     }

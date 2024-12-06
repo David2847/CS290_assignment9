@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 export const EditExercisePage = ({ exerciseToEdit }) => {
 
+    console.log(exerciseToEdit);
+
     // todo: modify the properties below
     const [name, setName] = useState(exerciseToEdit.name);
     const [reps, setReps] = useState(exerciseToEdit.reps);
@@ -42,7 +44,7 @@ export const EditExercisePage = ({ exerciseToEdit }) => {
                 onChange={e => setReps(e.target.valueAsNumber)} />
             <input
                 type="number"
-                value={language}
+                value={weight}
                 onChange={e => setWeight(e.target.value)} />
             <input
                 type="text"

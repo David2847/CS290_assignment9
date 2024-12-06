@@ -42,9 +42,9 @@ export const AddExercisePage = () => {
         <div>
             <h1>Add Exercise</h1>
             <input
-                type="name"
+                type="text"
                 placeholder="Enter name here"
-                value={title}
+                value={name}
                 onChange={e => setName(e.target.value)} />
             <input
                 type="number"
@@ -52,19 +52,19 @@ export const AddExercisePage = () => {
                 placeholder="Enter reps here"
                 onChange={e => setReps(e.target.valueAsNumber)} />
             <input
-                type="weight"
-                value={year}
+                type="number"
+                value={weight}
                 placeholder="Enter weight here"
                 onChange={e => setWeight(e.target.valueAsNumber)} />
             <input
-                type="unit"
+                type="text"
                 placeholder="Enter unit here"
-                value={language}
+                value={unit}
                 onChange={e => setUnit(e.target.value)} />
             <input
-                type="date"
+                type="text"
                 placeholder="Enter date here"
-                value={language}
+                value={date}
                 onChange={e => setDate(e.target.value)} />
             <button
                 onClick={addExercise}
