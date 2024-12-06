@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export const AddExercisePage = () => {
+export const CreateExercisePage = () => {
 
     const [name, setName] = useState('');
     const [reps, setReps] = useState('');
@@ -11,16 +11,7 @@ export const AddExercisePage = () => {
 
     const navigate = useNavigate();
 
-    const temp = {
-        "name": "Deadlift",
-        "reps": 1000,
-        "weight": 30,
-        "unit": "kgs",
-        "date": "07-18-24"
-    }
-
-
-    const addExercise = async () => {
+    const createExercise = async () => {
         const newExercise = {name, reps, weight, unit, date};
         const response = await fetch(
             '/exercises', {
@@ -31,16 +22,16 @@ export const AddExercisePage = () => {
         );
 
         if (response.status == 201) {
-            alert("Successfully added the exercise");
+            alert("Successfully created the exercise");
         } else {
-            alert("Failed to add exercise, status code = " + response.status);
+            alert("Failed to create exercise, status code = " + response.status);
         }
         navigate('/');
     };
 
     return (
         <div>
-            <h1>Add Exercise</h1>
+            <h1>Create Exercise</h1>
             <input
                 type="text"
                 placeholder="Enter name here"
@@ -67,10 +58,10 @@ export const AddExercisePage = () => {
                 value={date}
                 onChange={e => setDate(e.target.value)} />
             <button
-                onClick={addExercise}
-            >Add</button>
+                onClick={createExercise}
+            >Create</button>
         </div>
     );
 }
 
-export default AddExercisePage;
+export default CreateExercisePage;

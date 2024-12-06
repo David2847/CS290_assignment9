@@ -1,9 +1,9 @@
 import '../App.css';
 
-function ExerciseItem({ exercise, onDelete, onEdit }) {
+function ExerciseRow({ exercise, onDelete, onEdit }) {
 
     return (
-        <div className="collection-item">
+        <div className="exercise-row">
             <h3>{exercise.name}</h3>
             <p>{exercise.reps}, {exercise.unit}, {exercise.date}, {exercise._id}</p>
             <p>
@@ -14,4 +14,4 @@ function ExerciseItem({ exercise, onDelete, onEdit }) {
     );
 }
 
-export default ExerciseItem;
+export default ExerciseRow;

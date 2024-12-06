@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import ExerciseCollection from '../components/ExerciseCollection';
+import ExerciseTable from '../components/ExerciseTable';
 import { useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -38,8 +38,8 @@ function HomePage({ setExerciseToEdit }) {
     return (
         <>
             <h2>List of Exercises</h2>
-            <ExerciseCollection exercises={exercises} onDelete={onDelete} onEdit={onEdit}></ExerciseCollection>
-            <Link to="/add-exercise">Add an exercise</Link>
+            <ExerciseTable exercises={exercises} onDelete={onDelete} onEdit={onEdit}></ExerciseTable>
+            <Link to="/create-exercise">Create an exercise</Link>
         </>
     );
 }

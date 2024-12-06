@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import AddExercisePage from './pages/AddExercisePage';
+import CreateExercisePage from './pages/CreateExercisePage';
 import EditExercisePage from './pages/EditExercisePage';
 import { useState } from 'react';
 
@@ -14,7 +14,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<HomePage setExerciseToEdit={setExerciseToEdit}/>}></Route>
-            <Route path="/add-exercise" element={ <AddExercisePage />}></Route>
+            <Route path="/create-exercise" element={ <CreateExercisePage />}></Route>
             <Route path="/edit-exercise" element={ <EditExercisePage exerciseToEdit={exerciseToEdit}/>}></Route>
           </Routes>
         </Router>
