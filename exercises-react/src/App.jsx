@@ -11,6 +11,10 @@ function App() {
 
   return (
     <div className="app">
+        <header>
+          <h1>David's Exercise Tracker</h1>
+          <p>This web app can be used to track your exercise over time! Enter a new exercise or delete/edit an old one. </p>
+        </header>
         <Router>
           <Routes>
             <Route path="/" element={<HomePage setExerciseToEdit={setExerciseToEdit}/>}></Route>
@@ -18,6 +22,7 @@ function App() {
             <Route path="/edit-exercise" element={ <EditExercisePage exerciseToEdit={exerciseToEdit}/>}></Route>
           </Routes>
         </Router>
+        <footer>© 2024 David Jantz</footer>
     </div>
   );
 }

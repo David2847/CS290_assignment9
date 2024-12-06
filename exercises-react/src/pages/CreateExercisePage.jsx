@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Navigation from '../components/Navigation'
 
 export const CreateExercisePage = () => {
 
     const [name, setName] = useState('');
     const [reps, setReps] = useState('');
     const [weight, setWeight] = useState('');
-    const [unit, setUnit] = useState('');
+    const [unit, setUnit] = useState('lbs');
     const [date, setDate] = useState('');
 
-    const navigate = useNavigate();
+    const navigate = useNavigate()
 
     const createExercise = async () => {
         const newExercise = {name, reps, weight, unit, date};
@@ -31,6 +32,7 @@ export const CreateExercisePage = () => {
 
     return (
         <div>
+            <Navigation/>
             <h1>Create Exercise</h1>
             <input
                 type="text"
@@ -47,11 +49,13 @@ export const CreateExercisePage = () => {
                 value={weight}
                 placeholder="Enter weight here"
                 onChange={e => setWeight(e.target.valueAsNumber)} />
-            <input
-                type="text"
-                placeholder="Enter unit here"
+            <select
+                type="string"
                 value={unit}
-                onChange={e => setUnit(e.target.value)} />
+                onChange={e => setUnit(e.target.value)} >
+                <option value="lbs">lbs</option>
+                <option value="kgs">kgs</option>
+            </select>
             <input
                 type="text"
                 placeholder="Enter date here"

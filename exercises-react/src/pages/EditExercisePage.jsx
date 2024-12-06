@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Navigation from '../components/Navigation'
 
 export const EditExercisePage = ({ exerciseToEdit }) => {
 
@@ -33,6 +34,7 @@ export const EditExercisePage = ({ exerciseToEdit }) => {
 
     return (
         <div>
+            <Navigation/>
             <h1>Edit Exercise</h1>
             <input
                 type="text"
@@ -46,10 +48,13 @@ export const EditExercisePage = ({ exerciseToEdit }) => {
                 type="number"
                 value={weight}
                 onChange={e => setWeight(e.target.value)} />
-            <input
-                type="text"
+            <select
+                type="string"
                 value={unit}
-                onChange={e => setUnit(e.target.value)} />
+                onChange={e => setUnit(e.target.value)} >
+                <option value="lbs">lbs</option>
+                <option value="kgs">kgs</option>
+            </select>
             <input
                 type="text"
                 value={date}

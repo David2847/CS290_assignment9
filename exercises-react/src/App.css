@@ -4,26 +4,82 @@
   padding: 2rem;
   text-align: center;
   background-color: #282c34;
+  color: white; /* Ensures text is readable */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a slight shadow for depth */
 }
 
 .app {
   background-color: #282c34;
   color: white;
+  padding: 1rem; /* Adds padding for better spacing */
 }
 
-
-.exercise-table {
-  border: 6px solid rgb(0, 255, 136);
-  padding: 32px;
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: 'Arial', sans-serif; /* Sets a clean, readable font */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
 }
 
-.exercise-row {
-  border: 2px solid rgb(202, 200, 89);
-  border-radius: 8px;
-  width: 600px;
-  margin-top: 16px;
+table {
+  width: 100%; /* Ensures table takes full width */
+  border-collapse: collapse; /* Removes default spacing between table cells */
+  margin: 1rem 0; /* Adds spacing above and below table */
+}
+
+table tr th, table tr td {
+  border: 1px solid #ddd; /* Light border for table cells */
+  padding: 0.75rem; /* Adds padding inside table cells */
+  text-align: left; /* Aligns text to the left */
+}
+
+table tr th {
+  background-color: #f4f4f4; /* Light background for table headers */
+  color: #333; /* Dark text color for readability */
+}
+
+div button {
+  background-color: #4CAF50; /* Green background for buttons */
+  color: white; /* White text on buttons */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+div button:hover {
+  background-color: #45a049; /* Darkens button background on hover */
+}
+
+input, button, select {
+  padding: 0.75rem;
+  margin: 0.5rem;
+  border-radius:8px;
 }
 
 a {
+  color: #61dafb; /* Light blue color for links */
+  text-decoration: none; /* Removes underline from links */
+  padding: 0.25rem 0; /* Adds slight padding to links */
+}
+
+a:hover {
+  text-decoration: underline; /* Underlines links on hover */
+}
+
+.link {
+  margin: 10px;
+  padding: 10px 20px; /* Adds padding for a clickable area */
+  text-decoration: none; /* Removes underline from links */
+  color: #FFFFFF; /* Sets link color to blue */
+  background-color: #4CAF50; /* Light background color for contrast */
+  border-radius: 5px; /* Rounds the corners */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+.link:hover {
+  background-color: #45a049; /* Darker background on hover */
   color: white;
 }

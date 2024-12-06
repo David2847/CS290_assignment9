@@ -2,13 +2,25 @@ import ExerciseRow from './ExerciseRow';
 
 function ExerciseTable({ exercises, onDelete, onEdit}) {
     return (
-        <div className="exercise-table">
-            {exercises.map((exercise, i) => <ExerciseRow exercise={exercise} 
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Reps</th>
+                    <th>Weight</th>
+                    <th>Unit</th>
+                    <th>Date</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {exercises.map((exercise, i) => 
+                    <ExerciseRow exercise={exercise} 
                     onDelete={onDelete}
                     onEdit={onEdit}
                     key={i}/>)}
-        </div>
-
+            </tbody>
+        </table>
     );
 }
 

@@ -1,16 +1,17 @@
 import '../App.css';
+import EditOrRemove from './EditOrRemove';
 
 function ExerciseRow({ exercise, onDelete, onEdit }) {
 
     return (
-        <div className="exercise-row">
-            <h3>{exercise.name}</h3>
-            <p>{exercise.reps}, {exercise.unit}, {exercise.date}, {exercise._id}</p>
-            <p>
-                <a href="/" onClick={e => {e.preventDefault(); onEdit(exercise)}}>Edit</a>&nbsp;
-                <a href="/" onClick={e => {e.preventDefault(); onDelete(exercise._id)}}>Delete </a>
-            </p>
-        </div>
+        <tr key={exercise.name}>
+            <td>{exercise.name}</td>
+            <td>{exercise.reps}</td>
+            <td>{exercise.weight}</td>
+            <td>{exercise.unit}</td>
+            <td>{exercise.date}</td>
+            <td><EditOrRemove exercise={exercise} onDelete={onDelete} onEdit={onEdit}/></td>
+        </tr>
     );
 }
 
